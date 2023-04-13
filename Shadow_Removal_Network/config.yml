@@ -1,0 +1,37 @@
+
+# folder path of dataset, which includes 2 subfolders: cloudy_image/ and ground_truth/
+datasets_dir: /mnt/188/b/NTIRE23/data/shadow/ISTD/ISTD_Dataset/train
+valset_dir: /mnt/188/b/NTIRE23/data/shadow/ISTD/ISTD_Dataset/test
+train_list: train_list.txt
+test_list: 
+validation_list: val_list.txt
+out_dir: ./results_ISTD
+
+cuda: True
+gpu_ids: [0]
+
+train_size: 900
+val_size: 0 # 验证集大小是占训练集的半分比
+batchsize: 3
+validation_batchsize: 2
+epoch: 3000
+n_data: 300
+width: 480
+height: 360
+threads: 4
+
+gen_lr: 0.0004
+dis_lr: 0.0032
+beta1: 0.5
+lamb: 100
+minimax: 1
+g_freq: 1
+
+gen_init: #/mnt/188/b/NTIRE23/data/shadow/SpA-Former-shadow-removal/weights/gen_model_epoch_160.pth
+dis_init: #/mnt/188/b/NTIRE23/data/shadow/SpA-Former-shadow-removal/weights/dis_model_epoch_160.pth
+in_ch: 3
+out_ch: 3
+
+manualSeed: 0
+snapshot_interval: 1
+sample_img_interval: 20
